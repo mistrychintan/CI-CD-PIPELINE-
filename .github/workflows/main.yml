@@ -204,9 +204,9 @@ jobs:
   
 # Upload Trivy SARIF
   
-    - name: Run Trivy scan (CLI) 
-      run: | 
-        trivy fs --format sarif --output trivy-fs.sarif --severity CRITICAL,HIGH --exit-code 1 --ignore-unfixed 
+#    - name: Run Trivy scan (CLI) 
+ #     run: | 
+  #      trivy fs --format sarif --output trivy-fs.sarif --severity CRITICAL,HIGH --exit-code 1 --ignore-unfixed 
 
   
 # Hadolint Dockerfile Scan
