@@ -134,17 +134,12 @@ jobs:
 
 # Verify Build
 
-    - name: Verify Build Output
-      run: |
-        mkdir -p build
-  
-# Upload Build Artifact
-
-    - name: Upload Build
-      uses: actions/upload-artifact@v4
+    - name: Artifact upload
+      uses: actions/upload-artifact@v7
       with:
-        name: react-build
-        path: build
+        name: artifact-1
+        path: |
+            package*
 
 
 # Security Scan Job
@@ -175,8 +170,9 @@ jobs:
     - name: Download React Build
       uses: actions/download-artifact@v4
       with:
-        name: react-build
-        path: build
+        name:  artifact-1
+        path: |
+           package*
 
   
 # Gitleaks Secret Scan
