@@ -39,7 +39,7 @@ concurrency:
   
 env:
   NODE_VERSION: "22"
-  IMAGE_NAME: rahamshaik/zomato
+  IMAGE_NAME: chintan/ReactApp
   IMAGE_TAG: ${{ github.sha }}
   REPO: nodejsimage
  
@@ -263,7 +263,7 @@ jobs:
         load: true
 
         labels: |
-          org.opencontainers.image.title=Zomato
+          org.opencontainers.image.title=ReactApp
           org.opencontainers.image.source=${{ github.repository }}
           org.opencontainers.image.version=${{ github.sha }}
           org.opencontainers.image.revision=${{ github.sha }}
@@ -312,7 +312,7 @@ jobs:
       run: |
 
         docker run -d \
-        --name zomato-test \
+        --name App-test \
         -p 3000:3000 \
         ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
@@ -320,7 +320,7 @@ jobs:
 
         docker ps
 
-        docker logs zomato-test
+        docker logs App-test
 
   
 # Cleanup Test Container
@@ -329,7 +329,7 @@ jobs:
     - name: Cleanup
       if: always()
       run: |
-        docker rm -f zomato-test || true
+        docker rm -f App-test || true
 
 
 
