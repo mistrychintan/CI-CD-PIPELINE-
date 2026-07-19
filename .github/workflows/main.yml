@@ -39,7 +39,7 @@ concurrency:
   
 env:
   NODE_VERSION: "22"
-  IMAGE_NAME: chintan/ReactApp
+  IMAGE_NAME: chintan/reactapp
   IMAGE_TAG: ${{ github.sha }}
   REPO: nodejsimage
  
