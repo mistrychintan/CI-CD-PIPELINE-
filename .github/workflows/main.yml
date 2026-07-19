@@ -303,8 +303,8 @@ jobs:
 #  Push Image
     - name: Push Docker Image
       run: |
-        docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ secrets.DOCKER_USER }}/${{ env.REPO }}:${{ env.IMAGE_TAG}}
-        docker push ${{ secrets.DOCKER_USER }}/${{ env.REPO }}:${{ env.IMAGE_TAG }}
+        docker tag ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} ${{ secrets.DOCKER_USERNAME }}/${{ env.REPO }}:${{ env.IMAGE_TAG}}
+        docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.REPO }}:${{ env.IMAGE_TAG }}
 
 # Verify Container Starts
   
